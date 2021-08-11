@@ -1,7 +1,7 @@
 { nixpkgs }: nixpkgs.stdenv.mkDerivation rec {
   pname = "audible-activator";
   version = "0.2";
-  
+
   src = nixpkgs.fetchFromGitHub {
       owner = "inAudible-NG";
       repo = pname;
@@ -19,6 +19,5 @@
     mkdir -p $out/bin $out/lib
     cp {audible-activator.py,common.py} $out/lib
     ln -s $out/lib/audible-activator.py $out/bin/audible-activator
-  '';
-    
+  '';  
 }

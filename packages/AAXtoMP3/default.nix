@@ -1,7 +1,7 @@
 { nixpkgs }: nixpkgs.stdenv.mkDerivation rec {
   pname = "AAXtoMP3";
   version = "1.2";
-  
+
   src = nixpkgs.fetchFromGitHub {
       owner = "KrumpetPirate";
       repo = pname;
@@ -24,5 +24,4 @@
   fixupPhase = ''
     wrapProgram $out/bin/AAXtoMP3 --prefix PATH : ${nixpkgs.lib.makeBinPath buildInputs}
   '';
-    
 }
