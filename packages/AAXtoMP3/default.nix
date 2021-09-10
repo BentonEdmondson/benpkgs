@@ -5,7 +5,7 @@
   src = nixpkgs.fetchFromGitHub {
       owner = "KrumpetPirate";
       repo = pname;
-      rev = "v" + version;
+      rev = "v${version}";
       sha256 = "11d145yj1sc9m9jhj70l8dh2mzzwb710hrpnzjzayxcaq122i9yf";
   };
 
