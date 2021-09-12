@@ -14,6 +14,8 @@
   buildInputs = [
     nixpkgs.ffmpeg
     nixpkgs.mediainfo
+    nixpkgs.mp4v2
+    nixpkgs.jq
   ];
 
   installPhase = ''
