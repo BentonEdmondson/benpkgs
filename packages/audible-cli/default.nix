@@ -1,4 +1,4 @@
-{ nixpkgs, self }: nixpkgs.python3Packages.buildPythonApplication rec {
+{ nixpkgs, self, ... }: nixpkgs.python3Packages.buildPythonApplication rec {
     pname = "audible-cli";
     version = "0.0.dev20";
 
@@ -10,7 +10,7 @@
     };
 
     propagatedBuildInputs = [
-        self.packages.x86_64-linux.Audible
+        self.Audible
         nixpkgs.python3Packages.aiofiles
         nixpkgs.python3Packages.click
         nixpkgs.python3Packages.httpx

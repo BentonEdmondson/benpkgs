@@ -1,0 +1,37 @@
+diff --git a/Makefile b/Makefile
+index 39908f3..edd26df 100644
+--- a/Makefile
++++ b/Makefile
+@@ -4,8 +4,8 @@ CXX ?= $(CROSS)g++
+ 
+ UPDFPARSERLIB = ./lib/updfparser/libupdfparser.a
+ 
+-CXXFLAGS=-Wall -fPIC -I./include -I./lib -I./lib/pugixml/src/ -I./lib/updfparser/include
+-LDFLAGS = $(UPDFPARSERLIB)
++CXXFLAGS=-Wall -fPIC -I./include -I./lib -I./lib/updfparser/include
++LDFLAGS = $(UPDFPARSERLIB) -lpugixml 
+ 
+ BUILD_STATIC ?= 0
+ BUILD_SHARED ?= 1
+@@ -36,7 +36,7 @@ TARGETDIR   := bin
+ SRCEXT      := cpp
+ OBJEXT      := o
+ 
+-SOURCES      = src/libgourou.cpp src/user.cpp src/device.cpp src/fulfillment_item.cpp src/bytearray.cpp src/pugixml.cpp
++SOURCES      = src/libgourou.cpp src/user.cpp src/device.cpp src/fulfillment_item.cpp src/bytearray.cpp
+ OBJECTS     := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
+ 
+ all: lib obj $(TARGETS)
+diff --git a/utils/Makefile b/utils/Makefile
+index 928164b..e2c2743 100644
+--- a/utils/Makefile
++++ b/utils/Makefile
+@@ -1,7 +1,7 @@
+ 
+ TARGETS=acsmdownloader adept_activate
+ 
+-CXXFLAGS=-Wall `pkg-config --cflags Qt5Core Qt5Network` -fPIC -I$(ROOT)/include -I$(ROOT)/lib/pugixml/src/
++CXXFLAGS=-Wall `pkg-config --cflags Qt5Core Qt5Network` -fPIC -I$(ROOT)/include
+ 
+ LDFLAGS=`pkg-config --libs Qt5Core Qt5Network` -L$(ROOT) -lcrypto -lzip -lz
+ ifneq ($(STATIC_UTILS),)

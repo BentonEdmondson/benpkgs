@@ -1,4 +1,4 @@
-{ nixpkgs }: nixpkgs.stdenv.mkDerivation rec {
+{ nixpkgs, ... }: nixpkgs.stdenv.mkDerivation rec {
   pname = "AAXtoMP3";
   version = "1.2";
 

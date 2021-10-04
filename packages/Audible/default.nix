@@ -1,4 +1,4 @@
-{ nixpkgs }: nixpkgs.python3Packages.buildPythonPackage rec {
+{ nixpkgs, ... }: nixpkgs.python3Packages.buildPythonPackage rec {
     pname = "Audible";
     version = "0.5.5";
 
