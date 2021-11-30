@@ -1,12 +1,12 @@
 { nixpkgs, lib, ... }: nixpkgs.stdenv.mkDerivation rec {
     pname = "libgourou";
-    version = "0.4.1";
+    version = "0.4.4";
     src = [
         (nixpkgs.fetchgit {
             name = "libgourou";
             url = "git://soutade.fr/libgourou";
             rev = "v${version}";
-            sha256 = "0sh58c1fbp8c3bh0x1ghb2rpscy3r46nlz492hkspxhisvspp7zx";
+            sha256 = "0cq65ngjfs3kxwby2ip7kk19nww2kscb09cqk2pph7sh4gcb5qs2";
         })
         (nixpkgs.fetchgit {
             name = "updfparser";
@@ -14,7 +14,7 @@
             rev = "ea551b6f52c81a28404201b7b8609e1fc257b1d7";
             sha256 = "00c5d1vycsw69d5qzji0agvgljfrrjbib0wp1m7319gmdq9vnlp7";
         })
-        (builtins.fetchTarball {
+        (nixpkgs.fetchzip {
             name = "base64";
             url = "https://gist.github.com/tomykaira/f0fd86b6c73063283afe550bc5d77594/archive/7d5a89229a525452e37504976a73c35fbaf2fe4d.tar.gz";
             sha256 = "1g5i8iq5azbqmj3frffqdgc66j2c9agmx5zd0gjpxa1b7pba5pkn";

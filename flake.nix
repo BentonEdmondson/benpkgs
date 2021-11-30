@@ -9,9 +9,9 @@
     };
   in {
     packages.x86_64-linux.AAXtoMP3 = import ./packages/AAXtoMP3 flakes;
-    packages.x86_64-linux.audible-activator = import ./packages/audible-activator flakes;
     packages.x86_64-linux.audible-cli = import ./packages/audible-cli flakes;
     packages.x86_64-linux.Audible = import ./packages/Audible flakes;
     packages.x86_64-linux.libgourou = import ./packages/libgourou flakes;
+    packages.x86_64-linux.acsm-calibre-plugin = import ./packages/acsm-calibre-plugin flakes;
   };
 }
